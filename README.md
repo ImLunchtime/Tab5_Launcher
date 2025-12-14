@@ -1,7 +1,7 @@
 # Tab5-Launcher
 
 ## English
-A port of the M5Launcher (sort of) for the Tab5, with LVGL GUI.
+A "port" of the M5Launcher (sort of) for the Tab5, with LVGL GUI.
 
 ### What can it do?
 You can select and load firmwares from the SD card (must be formatted in FAT32) and flash them into the device.
@@ -9,6 +9,7 @@ You can select and load firmwares from the SD card (must be formatted in FAT32) 
 ### Known issues:
  - Sometimes when flashing a firmware LVGL will run into errors rendering the progress bar so the UI freezes (The flashing process is still going though).
  - The file manager is not working due to path issues
+ - The loaded firmware must not use the M5GFX/M5Unified library because if it uses M5GFX/M5Unified the device can't boot into the launcher again.
 
 ## 中文
 将 M5Launcher "移植"到Tab5设备上，使用LVGL实现GUI。
@@ -19,6 +20,7 @@ You can select and load firmwares from the SD card (must be formatted in FAT32) 
 ### 已知的问题
  - 有时烧录固件时，LVGL会出错导致进度条（界面）停止重绘，但是固件烧录进程依然会正常工作。
  - 文件管理器目前无法正常工作，因为默认路径不对。
+ - 加载的固件必须不使用 M5GFX/M5Unified 库，否则会导致设备不再重启到Launcher。
 
 ## How to build
 You can build using ESP-IDF, simply navigate to the project root and run `idf.py build`.
